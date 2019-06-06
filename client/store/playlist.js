@@ -3,10 +3,17 @@ import axios from 'axios'
 const CREATE_PLAYLIST = 'CREATE_PLAYLIST';
 const GET_ALL_TRACK_IDS = 'GET_ALL_TRACK_IDS';
 const UPDATE_MOOD = 'UPDATE_MOOD';
+const SELECTED_TRACK = 'SELECTED_TRACK';
+
 
 const createPlaylist = (tracks) => ({
     type: CREATE_PLAYLIST,
     tracks
+});
+
+const selectedTrack = (track) => ({
+  type: SELECTED_TRACK,
+  track
 });
 
 const getAllTrackId = (trackIds) => ({
@@ -27,6 +34,47 @@ export const createPlaylistThunk = obj => async dispatch => {
       console.log(err)
     }
   }
+
+  export const selectedEnergyTrackThunk = () => async dispatch => {
+    try {
+      const {data} = await axios.get('/api/playlist/highenergy')
+      console.log('Selected Track Thunk - DATA *******', data)
+      dispatch(selectedTrack(data))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  export const selectedHappyTrackThunk = () => async dispatch => {
+    try {
+      const {data} = await axios.get('/api/playlist/happy')
+      console.log('Selected Track Thunk - DATA *******', data)
+      dispatch(selectedTrack(data))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  export const selectedDanceTrackThunk = () => async dispatch => {
+    try {
+      const {data} = await axios.get('/api/playlist/dance')
+      console.log('Selected Track Thunk - DATA *******', data)
+      dispatch(selectedTrack(data))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  export const selectedSadTrackThunk = () => async dispatch => {
+    try {
+      const {data} = await axios.get('/api/playlist/sad')
+      console.log('Selected Track Thunk - DATA *******', data)
+      dispatch(selectedTrack(data))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   export const getAllTrackIdThunk = () => async dispatch => {
     try {
@@ -50,7 +98,8 @@ export const createPlaylistThunk = obj => async dispatch => {
 
   const initialState = {
     allTracks: [],
-    allTrackIds: []
+    allTrackIds: [],
+    selectedTrack: {}
 }
 
 export default function(state = initialState, action){
@@ -61,6 +110,9 @@ export default function(state = initialState, action){
             return newState
         case GET_ALL_TRACK_IDS:
             newState.allTrackIds = [...newState.allTrackIds, action.trackIds]
+            return newState
+        case SELECTED_TRACK:
+            newState.selectedTrack = {...newState.selectedTrack, selectedTrack: action.track}
             return newState
         default:
             return state

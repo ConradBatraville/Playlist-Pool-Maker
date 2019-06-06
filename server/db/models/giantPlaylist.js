@@ -13,6 +13,15 @@ const GiantPlaylist = db.define('giant_playlist', {
     },
     mood: {
         type: Sequelize.STRING
+    },
+    artistName: {
+        type: Sequelize.STRING
+    },
+    songTitle: {
+        type: Sequelize.STRING
+    },
+    albumName: {
+        type: Sequelize.STRING
     }
 })
 

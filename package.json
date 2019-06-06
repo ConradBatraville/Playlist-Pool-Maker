@@ -42,6 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
+    "bulma": "^0.7.5",
     "compression": "^1.7.3",
     "connect-session-sequelize": "^6.0.0",
     "express": "^4.16.4",
@@ -56,13 +57,15 @@
     "query-string": "^6.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-load-script": "0.0.6",
     "react-redux": "^7.0.1",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sequelize": "^5.3.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "spotify-web-api-node": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -79,6 +82,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "axios-mock-adapter": "^1.16.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",

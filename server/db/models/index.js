@@ -1,4 +1,3 @@
-const User = require('./user')
 const GiantPlaylist = require('./giantPlaylist')
 
 /**
@@ -15,6 +14,5 @@ const GiantPlaylist = require('./giantPlaylist')
  * instead of: const User = require('../db/models/user')
  */
 module.exports = {
-  User,
   GiantPlaylist
 }
