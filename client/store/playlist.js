@@ -38,7 +38,6 @@ export const createPlaylistThunk = obj => async dispatch => {
   export const selectedEnergyTrackThunk = () => async dispatch => {
     try {
       const {data} = await axios.get('/api/playlist/highenergy')
-      console.log('Selected Track Thunk - DATA *******', data)
       dispatch(selectedTrack(data))
     } catch (err) {
       console.log(err)
@@ -48,7 +47,6 @@ export const createPlaylistThunk = obj => async dispatch => {
   export const selectedHappyTrackThunk = () => async dispatch => {
     try {
       const {data} = await axios.get('/api/playlist/happy')
-      console.log('Selected Track Thunk - DATA *******', data)
       dispatch(selectedTrack(data))
     } catch (err) {
       console.log(err)
@@ -58,7 +56,6 @@ export const createPlaylistThunk = obj => async dispatch => {
   export const selectedDanceTrackThunk = () => async dispatch => {
     try {
       const {data} = await axios.get('/api/playlist/dance')
-      console.log('Selected Track Thunk - DATA *******', data)
       dispatch(selectedTrack(data))
     } catch (err) {
       console.log(err)
@@ -68,7 +65,6 @@ export const createPlaylistThunk = obj => async dispatch => {
   export const selectedSadTrackThunk = () => async dispatch => {
     try {
       const {data} = await axios.get('/api/playlist/sad')
-      console.log('Selected Track Thunk - DATA *******', data)
       dispatch(selectedTrack(data))
     } catch (err) {
       console.log(err)
@@ -79,7 +75,6 @@ export const createPlaylistThunk = obj => async dispatch => {
   export const getAllTrackIdThunk = () => async dispatch => {
     try {
       const {data} = await axios.get('/api/playlist')
-      console.log('DATA *******', data)
       dispatch(getAllTrackId(data))
     } catch (err) {
       console.log(err)
@@ -89,7 +84,6 @@ export const createPlaylistThunk = obj => async dispatch => {
   export const updateMoodThunk = (features) => async dispatch => {
     try {
       const {data} = await axios.put(`/api/playlist`, features)
-      console.log('Update Mood DATA *******', data)
       dispatch(updateMood(data))
     } catch (err) {
       console.log(err)

@@ -3,8 +3,7 @@
  * This way, we can import all of our components from the same place, rather than
  * having to figure out which file they belong to!
  */
-export {default as Spotify} from './navbar'
+export {default as Spotify} from './Spotify'
 export {default as TrackView} from './TrackView'
 
-// export {Login, Signup} from './auth-form'
 
